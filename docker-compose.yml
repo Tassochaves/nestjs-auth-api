@@ -1,0 +1,13 @@
+services:
+  postgres:
+    container_name: nestjs-auth-api
+    image: postgres
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password_pg
+      POSTGRES_DB: nestjs_auth_api
+      PGDATA: /data/postgres
+    volumes:
+      - ./data/pg:/data/postgres
