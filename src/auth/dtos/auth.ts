@@ -1,10 +1,20 @@
-export interface SignupDTO {
+import { IsEmail, IsNotEmpty } from 'class-validator';
+
+export class SignupDTO {
+  @IsNotEmpty()
   name: string;
+
+  @IsEmail()
   email: string;
+
+  @IsNotEmpty()
   password: string;
 }
 
-export interface SigninDTO {
+export class SigninDTO {
+  @IsEmail()
   email: string;
+
+  @IsNotEmpty()
   password: string;
 }
